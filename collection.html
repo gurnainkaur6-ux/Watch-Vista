@@ -1,1 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Collection - LOOKOUT PRO</title>
+    <meta name="description" content="Explore our complete collection of luxury watches from top brands including Rolex, Omega, Patek Philippe, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.svg" alt="LOOKOUT PRO Logo" class="logo">
+                <span class="brand-name">LOOKOUT PRO</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="collection.html" class="nav-link active">Collection</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+             <li class="nav-item cart-nav">
+  <a href="cart.html" class="nav-link">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cartCount" class="cart-count">0</span>
+  </a>
+</li>
+
+
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Collection</h1>
+            <p>Discover exceptional timepieces from the world's finest watchmakers</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All Watches</button>
+                <button class="filter-btn" data-filter="rolex">Rolex</button>
+                <button class="filter-btn" data-filter="omega">Omega</button>
+                <button class="filter-btn" data-filter="patek">Patek Philippe</button>
+                <button class="filter-btn" data-filter="ap">Audemars Piguet</button>
+                <button class="filter-btn" data-filter="breitling">Breitling</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Grid -->
+    <section class="collection-grid">
+        <div class="container">
+            <div class="watches-grid">
+                <!-- Rolex Watches -->
+                <div class="watch-item" data-category="rolex">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/47856/rolex-wrist-watch-clock-gmt-47856.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Rolex Submariner" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Rolex Submariner</h3>
+                            <p class="brand">Rolex</p>
+                            <p class="description">Professional diving watch with unidirectional rotating bezel.</p>
+                            <div class="price">$8,550</div>
+                         <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="watch-item" data-category="rolex">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/33238780/pexels-photo-33238780.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Rolex Datejust" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Rolex Datejust</h3>
+                            <p class="brand">Rolex</p>
+                            <p class="description">Timeless elegance with the iconic cyclops lens.</p>
+                            <div class="price">$7,350</div>
+                            <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="watch-item" data-category="rolex">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/364822/rolex-watch-time-luxury-364822.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Rolex GMT-Master II" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Rolex GMT-Master II</h3>
+                            <p class="brand">Rolex</p>
+                            <p class="description">Dual time zone functionality for world travelers.</p>
+                            <div class="price">$9,700</div>
+ <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Omega Watches -->
+                <div class="watch-item" data-category="omega">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/592815/pexels-photo-592815.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Omega Speedmaster" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Omega Speedmaster</h3>
+                            <p class="brand">Omega</p>
+                            <p class="description">The legendary moonwatch with chronograph precision.</p>
+                            <div class="price">$5,350</div>
+ <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="watch-item" data-category="omega">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/277319/pexels-photo-277319.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Omega Seamaster" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Omega Seamaster</h3>
+                            <p class="brand">Omega</p>
+                            <p class="description">Professional diving watch with Co-Axial movement.</p>
+                            <div class="price">$4,200</div>
+                            <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patek Philippe Watches -->
+                <div class="watch-item" data-category="patek">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/380782/pexels-photo-380782.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Patek Philippe Calatrava" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Patek Philippe Calatrava</h3>
+                            <p class="brand">Patek Philippe</p>
+                            <p class="description">Timeless elegance in its purest form.</p>
+                            <div class="price">$32,000</div>
+                             <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="watch-item" data-category="patek">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/3910031/pexels-photo-3910031.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Patek Philippe Nautilus" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Patek Philippe Nautilus</h3>
+                            <p class="brand">Patek Philippe</p>
+                            <p class="description">Iconic sport elegant timepiece with distinctive porthole design.</p>
+                            <div class="price">$55,000</div>
+                            <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audemars Piguet Watches -->
+                <div class="watch-item" data-category="ap">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/3083461/pexels-photo-3083461.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Audemars Piguet Royal Oak" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Audemars Piguet Royal Oak</h3>
+                            <p class="brand">Audemars Piguet</p>
+                            <p class="description">Iconic octagonal bezel with integrated bracelet.</p>
+                            <div class="price">$28,500</div>
+                      <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="watch-item" data-category="ap">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/125779/pexels-photo-125779.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Audemars Piguet Royal Oak Offshore" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Audemars Piguet Royal Oak Offshore</h3>
+                            <p class="brand">Audemars Piguet</p>
+                            <p class="description">Bold chronograph with distinctive oversized case.</p>
+                            <div class="price">$35,000</div>
+                             <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Breitling Watches -->
+                <div class="watch-item" data-category="breitling">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/1210019/pexels-photo-1210019.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Breitling Navitimer" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Breitling Navitimer</h3>
+                            <p class="brand">Breitling</p>
+                            <p class="description">Professional pilot's watch with slide rule bezel.</p>
+                            <div class="price">$4,950</div>
+                           <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="watch-item" data-category="breitling">
+                    <div class="watch-card">
+                        <div class="watch-image">
+                            <img src="https://images.pexels.com/photos/3829441/pexels-photo-3829441.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Breitling Superocean" class="watch-img">
+                        </div>
+                        <div class="watch-info">
+                            <h3>Breitling Superocean</h3>
+                            <p class="brand">Breitling</p>
+                            <p class="description">Professional diving chronometer with exceptional water resistance.</p>
+                            <div class="price">$3,800</div>
+                             <div class="action-buttons">
+    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    <button class="buy-now-btn"><i class="fas fa-bolt"></i> Buy Now</button>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.svg" alt="LOOKOUT PRO Logo" class="logo">
+                        <span class="brand-name">LOOKOUT PRO</span>
+                    </div>
+                    <p>Curating the world's finest timepieces for discerning collectors.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collection.html">Collection</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info@lookoutpro.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                   <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/?lang=en-in"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LOOKOUT PRO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
