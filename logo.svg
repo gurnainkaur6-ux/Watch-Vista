@@ -1,0 +1,78 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f4d03f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8941f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer circle (watch case) -->
+  <circle cx="60" cy="60" r="55" fill="url(#darkGradient)" stroke="url(#goldGradient)" stroke-width="3"/>
+  
+  <!-- Inner circle (watch face) -->
+  <circle cx="60" cy="60" r="45" fill="#0a0a0a" stroke="url(#goldGradient)" stroke-width="1"/>
+  
+  <!-- Hour markers -->
+  <g stroke="url(#goldGradient)" stroke-width="2">
+    <!-- 12 o'clock -->
+    <line x1="60" y1="20" x2="60" y2="28" stroke-width="3"/>
+    <!-- 3 o'clock -->
+    <line x1="100" y1="60" x2="92" y2="60" stroke-width="3"/>
+    <!-- 6 o'clock -->
+    <line x1="60" y1="100" x2="60" y2="92" stroke-width="3"/>
+    <!-- 9 o'clock -->
+    <line x1="20" y1="60" x2="28" y2="60" stroke-width="3"/>
+    
+    <!-- Minor hour markers -->
+    <line x1="82.5" y1="27.5" x2="79.8" y2="30.2"/>
+    <line x1="92.5" y1="37.5" x2="89.8" y2="40.2"/>
+    <line x1="92.5" y1="82.5" x2="89.8" y2="79.8"/>
+    <line x1="82.5" y1="92.5" x2="79.8" y2="89.8"/>
+    <line x1="37.5" y1="92.5" x2="40.2" y2="89.8"/>
+    <line x1="27.5" y1="82.5" x2="30.2" y2="79.8"/>
+    <line x1="27.5" y1="37.5" x2="30.2" y2="40.2"/>
+    <line x1="37.5" y1="27.5" x2="40.2" y2="30.2"/>
+  </g>
+  
+  <!-- Watch hands -->
+  <g stroke="url(#goldGradient)" stroke-linecap="round">
+    <!-- Hour hand pointing to 10 -->
+    <line x1="60" y1="60" x2="45" y2="38" stroke-width="4"/>
+    <!-- Minute hand pointing to 2 -->
+    <line x1="60" y1="60" x2="78" y2="35" stroke-width="3"/>
+    <!-- Second hand pointing to 6 -->
+    <line x1="60" y1="60" x2="60" y2="25" stroke-width="1" stroke="#ff6b6b"/>
+  </g>
+  
+  <!-- Center dot -->
+  <circle cx="60" cy="60" r="4" fill="url(#goldGradient)"/>
+  
+  <!-- Crown -->
+  <rect x="103" y="55" width="8" height="10" rx="2" fill="url(#goldGradient)"/>
+  <rect x="107" y="57" width="6" height="6" rx="1" fill="#0a0a0a"/>
+  
+  <!-- Brand initial 'L' (stylized) -->
+  <text x="60" y="80" font-family="serif" font-size="16" font-weight="bold" 
+        text-anchor="middle" fill="url(#goldGradient)">L</text>
+  
+  <!-- Subtle gear pattern around inner circle -->
+  <g stroke="url(#goldGradient)" stroke-width="0.5" fill="none" opacity="0.3">
+    <circle cx="60" cy="60" r="35"/>
+    <g>
+      <!-- Small gear teeth -->
+      <path d="M 60,25 L 62,27 L 58,27 Z"/>
+      <path d="M 95,60 L 93,62 L 93,58 Z"/>
+      <path d="M 60,95 L 58,93 L 62,93 Z"/>
+      <path d="M 25,60 L 27,58 L 27,62 Z"/>
+    </g>
+  </g>
+  
+  <!-- Outer ring details -->
+  <circle cx="60" cy="60" r="52" fill="none" stroke="url(#goldGradient)" 
+          stroke-width="0.5" opacity="0.5" stroke-dasharray="2,2"/>
+</svg>
