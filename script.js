@@ -691,4 +691,3 @@ function enhanceAccessibility() {
 
 // Initialize accessibility enhancements
 document.addEventListener('DOMContentLoaded', enhanceAccessibility);
-
