@@ -1,73 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cart - LUXURY PRIME</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart - LUXURY PRIME</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<style>
+/* ===== GLOBAL ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:#fff;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  background:#111;
+  padding:15px 0;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand-name{
+  color:#d4af37;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.nav-menu{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-link{
+  color:#fff;
+  text-decoration:none;
+  position:relative;
+}
+
+.nav-link.active,
+.nav-link:hover{
+  color:#d4af37;
+}
+
+.cart-nav{
+  position:relative;
+}
+
+.cart-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  background:#ff6a00;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
+/* ===== CART PAGE ===== */
+.cart-page{
+  margin-top:40px;
+}
+
+h1{
+  margin-bottom:25px;
+  color:#d4af37;
+}
+
+.cart-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-bottom:20px;
+}
+
+.cart-table th,
+.cart-table td{
+  border:1px solid #333;
+  padding:12px;
+  text-align:center;
+}
+
+.cart-table th{
+  background:#1a1a1a;
+}
+
+.qty-controls{
+  display:flex;
+  justify-content:center;
+  gap:5px;
+}
+
+.qty-btn{
+  width:28px;
+  height:28px;
+  border:none;
+  background:#ddd;
+  cursor:pointer;
+  font-weight:bold;
+  border-radius:5px;
+}
+
+.qty-input{
+  width:45px;
+  text-align:center;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+.remove-btn{
+  background:none;
+  border:none;
+  color:red;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.cart-summary{
+  text-align:right;
+  margin-top:20px;
+}
+
+.cart-actions{
+  margin-top:15px;
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+.checkout-btn{
+  background:#ff6a00;
+  border:none;
+  padding:10px 20px;
+  color:white;
+  cursor:pointer;
+  border-radius:6px;
+}
+
+.checkout-btn:hover{
+  background:#cc5500;
+}
+
+.clear-cart-btn{
+  background:#ccc;
+  border:none;
+  padding:10px 20px;
+  cursor:pointer;
+  border-radius:6px;
+}
+
+.clear-cart-btn:hover{
+  background:#aaa;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .cart-table{
+    font-size:14px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <img src="logo.svg" alt="LOOKOUT PRO Logo" class="logo">
-        <span class="brand-name">LUXURY PRIME</span>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="collection.html" class="nav-link">Collection</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-        <li class="nav-item cart-nav">
-          <a href="cart.html" class="nav-link active">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cartCount" class="cart-count">0</span>
-          </a>
-        </li>
-      </ul>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <span class="brand-name">LUXURY PRIME</span>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="collection.html" class="nav-link">Collection</a></li>
+      <li class="cart-nav">
+        <a href="cart.html" class="nav-link active">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cartCount" class="cart-count">0</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- CART -->
+<section class="cart-page container">
+  <h1>Your Shopping Cart</h1>
+
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody id="cartItems"></tbody>
+  </table>
+
+  <div class="cart-summary">
+    <h2>Total: $<span id="cartTotal">0.00</span></h2>
+    <div class="cart-actions">
+      <button class="clear-cart-btn">Clear Cart</button>
+      <button class="checkout-btn">Proceed to Checkout</button>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- Cart Page -->
-  <section class="cart-page">
-    <div class="container">
-      <h1>Your Shopping Cart</h1>
-      
-      <table class="cart-table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
-        <tbody id="cartItems">
-          <!-- Cart items will be injected via JS -->
-        </tbody>
-      </table>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
-      <div class="cart-summary">
-        <h2>Total: $<span id="cartTotal">0.00</span></h2>
-        <div class="cart-actions">
-          <button class="clear-cart-btn">Clear Cart</button>
-          <button class="checkout-btn">Proceed to Checkout</button>
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let totalQty = cart.reduce((sum,item)=>sum+item.qty,0);
+  document.getElementById("cartCount").innerText = totalQty;
+}
+
+function renderCart(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
+
+  cartItems.innerHTML="";
+  let total=0;
+
+  if(cart.length===0){
+    cartItems.innerHTML=`<tr><td colspan="5">🛒 Your cart is empty.</td></tr>`;
+    cartTotal.innerText="0.00";
+    updateCartCount();
+    return;
+  }
+
+  cart.forEach((item,index)=>{
+    let row=document.createElement("tr");
+    row.innerHTML=`
+      <td>${item.name}</td>
+      <td>$${item.price.toFixed(2)}</td>
+      <td>
+        <div class="qty-controls">
+          <button class="qty-btn minus" data-index="${index}">-</button>
+          <input type="number" class="qty-input" value="${item.qty}" min="1" data-index="${index}">
+          <button class="qty-btn plus" data-index="${index}">+</button>
         </div>
-      </div>
-    </div>
-  </section>
+      </td>
+      <td>$${(item.price*item.qty).toFixed(2)}</td>
+      <td>
+        <button class="remove-btn" data-index="${index}">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    `;
+    cartItems.appendChild(row);
+    total+=item.price*item.qty;
+  });
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 LUXURY PRIME. All rights reserved.</p>
-    </div>
-  </footer>
+  cartTotal.innerText=total.toFixed(2);
+  updateCartCount();
+}
 
+function updateQty(index,qty){
+  let cart=JSON.parse(localStorage.getItem("cart"))||[];
+  qty=parseInt(qty);
+  if(qty<1) qty=1;
+  cart[index].qty=qty;
+  localStorage.setItem("cart",JSON.stringify(cart));
+  renderCart();
+}
+
+function removeItem(index){
+  let cart=JSON.parse(localStorage.getItem("cart"))||[];
+  cart.splice(index,1);
+  localStorage.setItem("cart",JSON.stringify(cart));
+  renderCart();
+}
+
+function clearCart(){
+  localStorage.removeItem("cart");
+  renderCart();
+}
+
+document.addEventListener("click",function(e){
+  if(e.target.classList.contains("plus")){
+    let i=e.target.dataset.index;
+    let cart=JSON.parse(localStorage.getItem("cart"));
+    updateQty(i,cart[i].qty+1);
+  }
+
+  if(e.target.classList.contains("minus")){
+    let i=e.target.dataset.index;
+    let cart=JSON.parse(localStorage.getItem("cart"));
+    updateQty(i,cart[i].qty-1);
+  }
+
+  if(e.target.closest(".remove-btn")){
+    let i=e.target.closest(".remove-btn").dataset.index;
+    removeItem(i);
+  }
+});
+
+document.querySelector(".clear-cart-btn").addEventListener("click",function(){
+  if(confirm("Clear cart?")) clearCart();
+});
+
+document.querySelector(".checkout-btn").addEventListener("click",function(){
+  let cart=JSON.parse(localStorage.getItem("cart"))||[];
+  if(cart.length===0){
+    alert("Cart is empty!");
+    return;
+  }
+  alert("✅ Checkout Successful (Demo)");
+  clearCart();
+});
+
+renderCart();
+});
+</script>
 
 </body>
 </html>
-
